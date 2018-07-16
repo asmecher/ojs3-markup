@@ -83,30 +83,30 @@ class MarkupConversionHelper {
 		/* Page numbers */
 		$matches = null;
 		if (PKPString::regexp_match_get('/^[Pp][Pp]?[.]?[ ]?(\d+)$/', $submission->getPages(), $matches)) {
-			$matchedPage = htmlspecialchars(Core::cleanVar($matches[1]));
+			$matchedPage = $matches[1];
 			$fpage = $matchedPage;
 			$lpage = $matchedPage;
 			$pageCount = 1;
 		} elseif (PKPString::regexp_match_get('/^[Pp][Pp]?[.]?[ ]?(\d+)[ ]?(-|–)[ ]?([Pp][Pp]?[.]?[ ]?)?(\d+)$/', $submission->getPages(), $matches)) {
-			$fpage = htmlspecialchars(Core::cleanVar($matches[1]));
-			$lpage = htmlspecialchars(Core::cleanVar($matches[4]));
+			$fpage = $matches[1];
+			$lpage = $matches[4];
 			$pageCount = $fpage - $lpage + 1;
 		}
 
 		/* Localized journal titles */
 		foreach ($journal->getName(null) as $loc => $title) {
-			$journalTitles[strtoupper(substr($loc, 0, 2))] = htmlspecialchars(Core::cleanVar($title));
+			$journalTitles[strtoupper(substr($loc, 0, 2))] = htmlspecialchars($title);
 		}
 
 		/* Localized article titles */
 		foreach ($submission->getTitle(null) as $loc => $title) {
-			$articleTitles[strtoupper(substr($loc, 0, 2))] = htmlspecialchars(Core::cleanVar($title));
+			$articleTitles[strtoupper(substr($loc, 0, 2))] = htmlspecialchars($title);
 		}
 
 		/* Localized abstracts */
 		$abstracts = array();
 		if (is_array($submission->getAbstract(null))) foreach ($submission->getAbstract(null) as $loc => $abstract) {
-			$abstract = htmlspecialchars(Core::cleanVar(strip_tags($abstract)));
+			$abstract = htmlspecialchars(strip_tags($abstract));
 			if (empty($abstract)) continue;
 			$abstracts[strtoupper(substr($loc, 0, 2))] = $abstract;
 		}
@@ -118,7 +118,7 @@ class MarkupConversionHelper {
 			'article-titles'	=> $articleTitles,
 			'abstracts'		=> $abstracts,
 			'journal-titles'	=> $journalTitles,
-			'journal-id'	 	=> htmlspecialchars($journal->getSetting('abbreviation', $locale) ? Core::cleanVar($journal->getSetting('abbreviation', $locale)) : Core::cleanVar($journal->getSetting('acronym', $locale))),
+			'journal-id'	 	=> htmlspecialchars($journal->getSetting('abbreviation', $locale) ? $journal->getSetting('abbreviation', $locale) : $journal->getSetting('acronym', $locale)),
 			'institution'	   	=> $journal->getSetting('publisherInstitution'),
 			'contributors'	  	=> $authors,
 			'issue-details'	 	=> $issueDetails,
