@@ -134,7 +134,7 @@ class MarkupPlugin extends GenericPlugin {
 				HookRegistry::register('Templates::Management::Settings::website', array($this, 'callbackShowWebsiteSettingsTabs'));
 				HookRegistry::register('Templates::Management::Settings::website', array($this, 'callbackShowArticlesBatchConversionTabs'));
 				HookRegistry::register('Templates::User::profile', array($this, 'callbackUserProfile'));
-				HookRegistry::register('submissionfiledaodelegate::_deleteobject', array($this, 'callbackSubmissionFileDeteted'));
+				HookRegistry::register('submissionfiledaodelegate::_deleteobject', array($this, 'callbackSubmissionFileDeleted'));
 			}
 			return true;
 		}
@@ -578,7 +578,7 @@ class MarkupPlugin extends GenericPlugin {
 	 * @param $hookName string The name of the invoked hook
 	 * @param $args array Hook parameters
 	 */
-	public function callbackSubmissionFileDeteted($hookName, $params)
+	public function callbackSubmissionFileDeleted($hookName, $params)
 	{
 		if ((count($params) == 3) && isset($params[1]) 
 				&& is_array($params[1]) && count($params[1] == 2)) {
