@@ -48,7 +48,6 @@ class MarkupSettingsForm extends Form {
 			'markupHostUser' => 'string',
 			'wantedFormats' => 'object',
 			'xmlConversionStages' => 'object',
-			'editWithSubstanceStages' => 'object',
 		);
 
 		$this->_plugin->import('classes.MarkupConversionHelper');
@@ -109,15 +108,8 @@ class MarkupSettingsForm extends Form {
 			$xmlConversionStages = $this->_plugin->getXmlConversionStages();
 		}
 
-		// edit with substance
-		$editWithSubstanceStages = $plugin->getSetting($journalId, 'editWithSubstanceStages');
-		if (is_null($editWithSubstanceStages)) {
-			$editWithSubstanceStages = $this->_plugin->getEditWithSubstanceStages();
-		}
-
 		$this->setData('wantedFormats', $wantedFormats);
 		$this->setData('xmlConversionStages', $xmlConversionStages);
-		$this->setData('editWithSubstanceStages', $editWithSubstanceStages);
 	}
 
 	/**
@@ -135,7 +127,6 @@ class MarkupSettingsForm extends Form {
 				'wantedFormats',
 				'authType',
 				'xmlConversionStages',
-				'editWithSubstanceStages',
 			)
 		);
 	}
@@ -167,7 +158,6 @@ class MarkupSettingsForm extends Form {
 		$this->addCheck(new FormValidatorPost($this));
 		$this->addCheck(new FormValidator($this, 'wantedFormats', 'required', 'plugins.generic.markup.required.wantedFormats'));
 		$this->addCheck(new FormValidator($this, 'xmlConversionStages', 'required', 'plugins.generic.markup.required.xmlConversionStages'));
-		$this->addCheck(new FormValidator($this, 'editWithSubstanceStages', 'required', 'plugins.generic.markup.required.editWithSubstanceStages'));
 
 		return parent::validate();
 	}
@@ -232,6 +222,5 @@ class MarkupSettingsForm extends Form {
 
 		$plugin->updateSetting($journalId, 'wantedFormats', $this->getData('wantedFormats'));
 		$plugin->updateSetting($journalId, 'xmlConversionStages', $this->getData('xmlConversionStages'));
-		$plugin->updateSetting($journalId, 'editWithSubstanceStages', $this->getData('editWithSubstanceStages'));
 	}
 }

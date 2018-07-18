@@ -18,5 +18,3 @@
 require_once('MarkupPlugin.inc.php');
 
 return new MarkupPlugin();
-
-?>

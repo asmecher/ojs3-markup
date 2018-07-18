@@ -37,9 +37,6 @@ class MarkupPlugin extends GenericPlugin {
 	/** @var $conversionStages array Default list of stages for convert to xml feature */
 	protected $_xmlConversionStages = array(WORKFLOW_STAGE_ID_SUBMISSION,WORKFLOW_STAGE_ID_INTERNAL_REVIEW,WORKFLOW_STAGE_ID_EXTERNAL_REVIEW,WORKFLOW_STAGE_ID_EDITING,WORKFLOW_STAGE_ID_PRODUCTION);
 
-	/** @var $editWithSubstanceStages array Default list of stages for edit with substance feature */
-	protected $_editWithSubstanceStages = array(WORKFLOW_STAGE_ID_SUBMISSION,WORKFLOW_STAGE_ID_INTERNAL_REVIEW,WORKFLOW_STAGE_ID_EXTERNAL_REVIEW,WORKFLOW_STAGE_ID_EDITING,WORKFLOW_STAGE_ID_PRODUCTION);
-
 	/**
 	 * Returns list of available formats
 	 *
@@ -58,15 +55,6 @@ class MarkupPlugin extends GenericPlugin {
 		return $this->_xmlConversionStages;
 	}
 
-	/**
-	 * Returns default list of stages for edit with substance feature
-	 *
-	 * @return array Default list of stages for edit with substance feature
-	 */
-	public function getEditWithSubstanceStages() {
-		return $this->_editWithSubstanceStages;
-	}
-	
 	/**
 	 * Get the system name of this plugin.
 	 * The name must be unique within its category.
@@ -195,15 +183,6 @@ class MarkupPlugin extends GenericPlugin {
 		return $request->getBaseUrl() . '/' . $this->getPluginPath() . '/js';
 	}
 
-	/**
-	 * Get texture editor folder url
-	 *
-	 * @return string url to texture folder
-	 */
-	function getTextureFolderUrl($request) {
-		return $request->getBaseUrl() . '/' . $this->getPluginPath() . '/texture';
-	}
-	
 	/**
 	 * Override the builtin to get the correct template path.
 	 *
@@ -340,14 +319,10 @@ class MarkupPlugin extends GenericPlugin {
 			$publicOps = array(
 				'convertToXml',
 				'generateGalleyFiles',
-				'editor',
-				'json',
-				'save',
 				'profile',
 				'triggerConversion',
 				'fetchConversionJobStatus',
 				'batch',
-				'media',
 			);
 
 			if (!in_array($op, $publicOps)) return;
@@ -442,28 +417,6 @@ class MarkupPlugin extends GenericPlugin {
 								__('plugins.generic.markup.modal.galleyProduction')
 							),
 							__('plugins.generic.markup.links.generateGalley'),
-							null
-						));
-					}
-				}
-				
-				if (strtolower($fileExtension) == 'xml') {
-					// get list of stages for "Edit with Substance" feature.
-					$editWithSubstanceStages = $this->getSetting($journalId, 'editWithSubstanceStages');
-
-					if (in_array($stageId, $editWithSubstanceStages)) {
-						import('lib.pkp.classes.linkAction.request.OpenWindowAction');
-						$row->addAction(new LinkAction(
-							'editor',
-							new OpenWindowAction(
-								$dispatcher->url($request, ROUTE_PAGE, null, 'markup', 'editor', null, 
-										array(
-											'submissionId' => $submissionFile->getSubmissionId(), 
-											'fileId' => $submissionFile->getFileId(), 
-											'stageId' => $stageId)
-										)
-							),
-							__('plugins.generic.markup.links.editWithSubstance'),
 							null
 						));
 					}

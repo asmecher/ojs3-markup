@@ -59,13 +59,6 @@
 		{fbvElement type="checkbox" name="xmlConversionStages[]" id="conversionProductionStage" value=$smarty.const.WORKFLOW_STAGE_ID_PRODUCTION label="manager.publication.productionStage" checked=$smarty.const.WORKFLOW_STAGE_ID_PRODUCTION|@in_array:$xmlConversionStages}
 	{/fbvFormSection}
 
-	{fbvFormSection list=true description="plugins.generic.markup.settings.editWithSubstanceStages" description="plugins.generic.markup.settings.editWithSubstanceStagesHelp"}
-		{fbvElement type="checkbox" name="editWithSubstanceStages[]" id="editWithSubstanceSubmissionStage" value=$smarty.const.WORKFLOW_STAGE_ID_SUBMISSION label="manager.publication.submissionStage" checked=$smarty.const.WORKFLOW_STAGE_ID_SUBMISSION|@in_array:$editWithSubstanceStages}
-		{fbvElement type="checkbox" name="editWithSubstanceStages[]" id="editWithSubstanceReviewStage" value=$smarty.const.WORKFLOW_STAGE_ID_EXTERNAL_REVIEW label="manager.publication.reviewStage" checked=$smarty.const.WORKFLOW_STAGE_ID_EXTERNAL_REVIEW|@in_array:$editWithSubstanceStages}
-		{fbvElement type="checkbox" name="editWithSubstanceStages[]" id="editWithSubstanceEditorialStage" value=$smarty.const.WORKFLOW_STAGE_ID_EDITING label="manager.publication.editorialStage" checked=$smarty.const.WORKFLOW_STAGE_ID_EDITING|@in_array:$editWithSubstanceStages}
-		{fbvElement type="checkbox" name="editWithSubstanceStages[]" id="editWithSubstanceProductionStage" value=$smarty.const.WORKFLOW_STAGE_ID_PRODUCTION label="manager.publication.productionStage" checked=$smarty.const.WORKFLOW_STAGE_ID_PRODUCTION|@in_array:$editWithSubstanceStages}
-	{/fbvFormSection}
-
 	{if $markupConfigDefaultCitationHashAvailable eq true}
 		{fbvFormSection description="plugins.generic.markup.settings.citationHashFromConfigNotice"}{/fbvFormSection}
 	{else}

@@ -65,7 +65,6 @@
 	<message key="plugins.generic.markup.settings.authTypeUser">User-specific authentication</message>
 	<message key="plugins.generic.markup.links.convertToXml">Convert to XML</message>
 	<message key="plugins.generic.markup.links.generateGalley">Generate Galley Files</message>
-	<message key="plugins.generic.markup.links.editWithSubstance">Edit with Texture</message>
 	<message key="plugins.generic.markup.conversion.trigger">Trigger Job</message>
 	<message key="plugins.generic.markup.modal.xmlConversion">XML conversion</message>
 	<message key="plugins.generic.markup.modal.galleyProduction">Generate Galley Files</message>
@@ -76,14 +75,11 @@
 	<message key="plugins.generic.markup.settings.loginCredsNotAvailable">OTS login credentials have not been specified.</message>
 	<message key="plugins.generic.markup.settings.conversionStages">OTS-enabled workflow stages</message>
 	<message key="plugins.generic.markup.settings.conversionStagesHelp">Select workflow stages where article conversion to XML via OTS is available. You may wish to limit access to OTS at certain times depending on your production workflow.</message>
-	<message key="plugins.generic.markup.settings.editWithSubstanceStages">Texture editor-enabled workflow stages</message>
-	<message key="plugins.generic.markup.settings.editWithSubstanceStagesHelp">Select workflow stages where the Texture XML editor is available.</message>
 	<message key="plugins.generic.markup.required.xmlConversionStages">OTS conversion must be enabled in at least one stage.</message>
-	<message key="plugins.generic.markup.required.editWithSubstanceStages">The Texture XML editor must be enabled in at least one stage.</message>
 	<message key="plugins.generic.markup.batch">OTS Backlog conversion</message>
 	<message key="plugins.generic.markup.batch.trigger-label">Start conversion</message>
 	<message key="plugins.generic.markup.batch.cancel-label">Cancel conversion</message>
-	<message key="plugins.generic.markup.batch.selected-submissions">On this page, you can automatically batch-convert already-published articles from PDF or Word formats to JATS XML using PKP's Open Typesetting Stack, without needing to navigate to each article individually. While this will generally not produce perfect results -- the Open Typesetting Stack is normally intended to be used together with the included Texture editor to improve the quality of XML -- it should be sufficient to populate your journals' OAI feed with structured data for harvesting purposes. The Open Typesetting Stack will return converted XML to your journals under the "Production Ready Files" stage for each article that is converted here. You can still navigate to each article individually to improve formatting with Texture after performing this batch conversion.</message>
+	<message key="plugins.generic.markup.batch.selected-submissions">On this page, you can automatically batch-convert already-published articles from PDF or Word formats to JATS XML using PKP's Open Typesetting Stack, without needing to navigate to each article individually. While this will generally not produce perfect results -- the Open Typesetting Stack is normally intended to be used together with the Texture editor to improve the quality of XML -- it should be sufficient to populate your journals' OAI feed with structured data for harvesting purposes. The Open Typesetting Stack will return converted XML to your journals under the "Production Ready Files" stage for each article that is converted here. You can still navigate to each article individually to improve formatting with Texture after performing this batch conversion.</message>
 	<message key="plugins.generic.markup.batch-select-file">Select a file to convert</message>
 	<message key="plugins.generic.markup.trigger-conversion">Your conversion request is being processed.</message>
 	<message key="plugins.generic.markup.cancel-success">Batch conversion cancelled successfully</message>

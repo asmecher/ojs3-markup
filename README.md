@@ -46,15 +46,9 @@ This option will only be available for all workflow stages (Submission, Review, 
 
 ![](https://github.com/kaschioudi/ojs3-markup/blob/master/readme-images/complete.png?raw=true)
 
-After the job is complete, you should see an XML version of the same article available alongside the Word or PDF document that was originally uploaded, with another new hook: the ability to directly edit the article XML in the browser, with the *Texture* web app.
+After the job is complete, you should see an XML version of the same article available alongside the Word or PDF document that was originally uploaded.
 
 ![](https://github.com/kaschioudi/ojs3-markup/blob/master/readme-images/edit.png?raw=true)
-
-​[Texture](https://github.com/substance/texture) is a WYSIWYG, user-friendly, native JATS XML editor. Users who don't want to think about XML never have to, but are still deliberately constrained by the JATS spec when making changes to the document, so that (unlike when editing with Word), they can publish directly from here. For expert users who *are *interested in tweaking XML, or for anyone wanting to add a JATS element that is not yet implemented in the WYSIWYG, you can do this with the "Insert" button in the top bar. More and more JATS elements will be added over time so that they are rendered natively, and at the same time Texture will incorporate different custom views offering expert users greater ease of use when directly editing XML.
-
-The save behaviour in Texture is also currently incomplete -- our plan is for it to eventually act like Google Docs wherein all changes are saved automatically, with the save button in the top bar acting as a "Save as" button, when you want to register a new draft of the article in OJS. Currently, though, you need to use that button to save, and "save as" isn't there yet.
-
-![](https://github.com/kaschioudi/ojs3-markup/blob/master/readme-images/texture.png?raw=true)
 
 Once you're done editing the document, you can move along to the final production stage of the workflow. Similar to the initial XML conversion, on the Production tab you'll have the option to **generate galley files** from any Word, PDF, or XML documents that you've brought forward from earlier workflow stages.
 
