@@ -27,7 +27,7 @@
 	<message key="plugins.generic.markup.required.cslStyle">Citation Style is required.</message>
 	<message key="plugins.generic.markup.required.authType">Authentication type is required.</message>
 	<message key="plugins.generic.markup.required.wantedFormats">At least one document format must be selected.</message>
-	<message key="plugins.generic.markup.settings">OTS Settings</message>
+	<message key="plugins.generic.markup.settings">Settings</message>
 	<message key="plugins.generic.markup.settings.cslStyle">Select Citation Style:</message>
 	<message key="plugins.generic.markup.settings.cslStyleFieldHelp">Choose your preferred citation style for PDF and ePub output. Input citation style is detected automatically.</message>
 	<message key="plugins.generic.markup.settings.disabled">Disabled</message>
@@ -76,7 +76,7 @@
 	<message key="plugins.generic.markup.settings.conversionStages">OTS-enabled workflow stages</message>
 	<message key="plugins.generic.markup.settings.conversionStagesHelp">Select workflow stages where article conversion to XML via OTS is available. You may wish to limit access to OTS at certain times depending on your production workflow.</message>
 	<message key="plugins.generic.markup.required.xmlConversionStages">OTS conversion must be enabled in at least one stage.</message>
-	<message key="plugins.generic.markup.batch">OTS Backlog conversion</message>
+	<message key="plugins.generic.markup.batch">Backlog conversion</message>
 	<message key="plugins.generic.markup.batch.trigger-label">Start conversion</message>
 	<message key="plugins.generic.markup.batch.cancel-label">Cancel conversion</message>
 	<message key="plugins.generic.markup.batch.selected-submissions">On this page, you can automatically batch-convert already-published articles from PDF or Word formats to JATS XML using PKP's Open Typesetting Stack, without needing to navigate to each article individually. While this will generally not produce perfect results -- the Open Typesetting Stack is normally intended to be used together with the Texture editor to improve the quality of XML -- it should be sufficient to populate your journals' OAI feed with structured data for harvesting purposes. The Open Typesetting Stack will return converted XML to your journals under the "Production Ready Files" stage for each article that is converted here. You can still navigate to each article individually to improve formatting with Texture after performing this batch conversion.</message>
