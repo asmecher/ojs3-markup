@@ -38,7 +38,7 @@ class MarkupSettingsForm extends Form {
 		$this->_journalId = $journalId;
 		$this->_plugin = $plugin;
 		
-		parent::__construct($plugin->getTemplatePath() . 'settingsForm.tpl');
+		parent::__construct($plugin->getTemplateResource('settingsForm.tpl'));
 
 		// Validation checks for this form
 		$this->_settings = array(

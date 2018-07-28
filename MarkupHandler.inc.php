@@ -229,7 +229,6 @@ class MarkupHandler extends Handler {
 		$context = $request->getContext();
 		AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON,  LOCALE_COMPONENT_PKP_MANAGER);
 		$templateMgr = TemplateManager::getManager($request);
-		$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
 		
 		$this->_plugin->import('MarkupProfileSettingsForm');
 		$form = new MarkupProfileSettingsForm($this->_plugin, $context->getId());
