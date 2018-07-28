@@ -138,12 +138,12 @@ class MarkupPlugin extends GenericPlugin {
 		if ($category == 'gateways') {
 			$this->import('MarkupGatewayPlugin');
 			$gatewayPlugin = new MarkupGatewayPlugin($this->getName());
-			$plugins[$gatewayPlugin->getSeq()][$gatewayPlugin->getPluginPath()] =& $gatewayPlugin;
+			$plugins[$gatewayPlugin->getSeq()][$gatewayPlugin->getPluginPath()] = $gatewayPlugin;
 
 			// batch conversion
 			$this->import('MarkupBatchGatewayPlugin');
 			$batchGatewayPlugin = new MarkupBatchGatewayPlugin($this->getName());
-			$plugins[$batchGatewayPlugin->getSeq()][$batchGatewayPlugin->getPluginPath()] =& $batchGatewayPlugin;
+			$plugins[$batchGatewayPlugin->getSeq()][$batchGatewayPlugin->getPluginPath()] = $batchGatewayPlugin;
 		}
 	}
 	
@@ -181,15 +181,6 @@ class MarkupPlugin extends GenericPlugin {
 	 */
 	function getJsUrl($request) {
 		return $request->getBaseUrl() . '/' . $this->getPluginPath() . '/js';
-	}
-
-	/**
-	 * Override the builtin to get the correct template path.
-	 *
-	 * @return string Plugin template path
-	 */
-	function getTemplatePath() {
-		return parent::getTemplatePath() . 'templates/';
 	}
 
 	/**
@@ -250,7 +241,6 @@ class MarkupPlugin extends GenericPlugin {
 				$context = $request->getContext();
 				AppLocale::requireComponents(LOCALE_COMPONENT_APP_COMMON,  LOCALE_COMPONENT_PKP_MANAGER);
 				$templateMgr = TemplateManager::getManager($request);
-				$templateMgr->register_function('plugin_url', array($this, 'smartyPluginUrl'));
 				$form = new MarkupSettingsForm($this, $context->getId());
 				if ($request->getUserVar('save')) {
 					$form->readInputData();
