@@ -23,7 +23,7 @@ class MarkupBatchGatewayPlugin extends GatewayPlugin {
 	protected $_markupConversionHelper = null;
 	/** @var $helper MarkupBatchConversionHelper Batch conversion helper object */
 	protected $_batchConversionHelper = null;
-	/** @var $user PKPUser user object */
+	/** @var $user User user object */
 	protected $_user = null;
 	/** @var $plugin MarkupPlugin Reference to markup plugin */
 	protected $_plugin = null;

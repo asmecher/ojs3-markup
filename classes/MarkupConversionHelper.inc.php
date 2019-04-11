@@ -28,7 +28,7 @@ class MarkupConversionHelper {
 	 * Constructor
 	 * @param $plugin MarkupPlugin 
 	 * @param $xmlpsWrapper XMLPSWrapper 
-	 * @param $user PKPUser 
+	 * @param $user User
 	 */
 	public function __construct($plugin, $xmlpsWrapper, $user) {
 		$this->_plugin = $plugin;
@@ -627,7 +627,7 @@ class MarkupConversionHelper {
 
 	/**
 	 * Create an access token used for Gateway plugin request validation
-	 * @param $user PKPUser
+	 * @param $user User
 	 * @return accessKey string The generated passkey
 	 */
 	public static function makeAccessToken($user) {
@@ -639,7 +639,7 @@ class MarkupConversionHelper {
 
 	/**
 	 * Validates access key supplied to a gateway plugin 
-	 * @param $user PKPUser
+	 * @param $user User
 	 * @param $accessKey string
 	 * @return accessKey string The generated passkey
 	 */

@@ -28,7 +28,7 @@ class BatchConversionTool extends CommandLineTool {
 	/** @var MarkupPlugin Markup plugin object */
 	protected $_markupPlugin = null;
 
-	/** @var PKPUser User object */
+	/** @var User User object */
 	protected $_user = null;
 
 	/** @var Context Current context object */
