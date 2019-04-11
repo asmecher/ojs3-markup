@@ -85,16 +85,11 @@ class MarkupPlugin extends GenericPlugin {
 	
 	
 	/**
-	 * Register the plugin
-	 *
-	 * @param $category string Plugin category
-	 * @param $path string Plugin path
-	 *
-	 * @return bool True on successful registration false otherwise
+	 * @copydoc Plugin::register()
 	 */
-	function register($category, $path) {
+	function register($category, $path, $mainContextId = null) {
 		
-		if (parent::register($category, $path)) {
+		if (parent::register($category, $path, $mainContextId)) {
 			if ($this->getEnabled()) {
 				$this->import('classes.MarkupJobInfoDAO');
 
